@@ -1,8 +1,23 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+ZSH=$HOME/.oh-my-zsh
+DOTFILES=$HOME/.dotfiles
+ZSH_THEME="nanotech"
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+CASE_SENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
+COMPLETION_WAITING_DOTS="true"
+AUTO_PARAM_SLASH="true"
+
+plugins=(
+
+    git git-extras github colored-man colorize common-aliases
+    cp debian django fabric jump nyan python pip pj autoenv celery
+    virtualenv supervisor systemadmin tmux tmuxinator web-search
+    zsh-syntax-highlighting history-substring-search helpers
+
+)
+
+source $ZSH/oh-my-zsh.sh
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -13,7 +28,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($DOTFILES/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
