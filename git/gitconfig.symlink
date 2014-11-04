@@ -1,0 +1,38 @@
+[user]
+        name = AUTHORNAME
+        email = AUTHOREMAIL
+[credential]
+        helper = GIT_CREDENTIAL_HELPER
+[alias]
+        ci = commit
+        co = checkout
+        promote = !$DOTFILES/bin/git-promote
+        wtf     = !$DOTFILES/bin/git-wtf
+        rank-contributors = !$DOTFILES/bin/git-rank-contributors
+        count   = !git shortlog -sn
+        br = branch
+        unstage = reset HEAD
+        wu = log --stat talpor..@{0}
+        wup = log talpor..@{0}
+        st = status -sb
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        missing = "!f() { git rev-list ..$1 --oneline | sed -e '1 iOnly in other:'; git rev-list $1.. --oneline | sed -e '1 iOnly in HEAD:'; }; f"
+[color "status"]
+        changed = yellow
+        added = green
+        untracked = red
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        autocrlf = input
+        editor = emacsclient -t
+[apply]
+        whitespace = nowarn
+[help]
+        autocorrect = 1
+[push]
+        default = tracking
