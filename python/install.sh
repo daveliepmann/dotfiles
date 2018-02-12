@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.11.6.tar.gz#md5=f61cdd983d2c4e6aeabb70b1060d6f49
-tar -xvzf virtualenv-1.11.6.tar.gz
-python virtualenv-1.11.6/virtualenv.py ~/.python
+wget https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz#md5=44e19f4134906fe2d75124427dc9b716
+tar -xvzf virtualenv-15.1.0.tar.gz
+python virtualenv-15.1.0/virtualenv.py ~/.python
 ~/.python/bin/pip install virtualenv virtualenvwrapper
